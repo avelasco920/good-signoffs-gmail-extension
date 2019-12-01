@@ -65,7 +65,7 @@ const signoffs = [
   "Your patient,",
   "bon appetit,",
   "would be funny if we’re cousins,",
-  "Fantically-- or fanatically--↵Yours for a better world,↵Before we have to settle for Any--",
+  "Fantically-- or fanatically--\nYours for a better world,\nBefore we have to settle for Any--",
   "Your slave and enemy,",
   "All, always",
   "Dear children, keep yourselves from idols,",
@@ -85,7 +85,6 @@ const signoffs = [
   "Long live the Queen,",
   "Your boy,",
   "Death to the enemy,",
-  "```",
   "Sent from my toaster,",
   "in this moment,",
   "Warmest,",
@@ -238,35 +237,22 @@ const signoffs = [
   "Free and easy wandering,",
   "I'm going on a short vacation. Please don't look for me,",
   "warmth,",
-  "Thank you to the people that let me know it was wrong.↵Rocio",
+  "Thank you to the people that let me know it was wrong.\nRocio",
   "Peace, mucho love and remember where you came from––the womb,"
 ]
 
 InboxSDK.load(2, 'sdk_good-signoffs_c71abb4fbd').then(function(sdk){
 
   sdk.Compose.registerComposeViewHandler(function(composeView){
-
-    const statusBar = composeView.addStatusBar()
-      statusBar.el.style.borderTop = '1px solid #c3c3c3'
-      statusBar.el.style.paddingTop = '10px'
-
-    const button = document.createElement('img')
-      button.src = 'https://freepngimg.com/thumb/ryan_gosling/31624-7-ryan-gosling-image.png'
-      button.setAttribute('style', 'height: 24px; padding: 3px; border-radius: 3px; cursor: pointer; background-color: #F9F8F6')
-      button.addEventListener('click', () => {
+    
+    composeView.addButton({
+      title: 'Add Good Signoff',
+      iconUrl: 'https://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/yellow-heart.png',
+      onClick: function(event) {
         const randomSignoff = signoffs[Math.floor(Math.random() * signoffs.length)]
-        composeView.insertTextIntoBodyAtCursor(randomSignoff);
-      })
-
-    statusBar.el.appendChild(button)
-
-    // composeView.addButton({
-    //   title: "My Nifty Button!",
-    //   iconUrl: 'https://freepngimg.com/thumb/ryan_gosling/31624-7-ryan-gosling-image.png',
-    //   onClick: function(event) {
-    //     event.composeView.insertTextIntoBodyAtCursor('Hello World!');
-    //   },
-    // });
+        event.composeView.insertTextIntoBodyAtCursor(randomSignoff);
+      }
+    });
 
   });
 
