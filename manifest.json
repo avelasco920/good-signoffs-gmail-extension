@@ -11,5 +11,6 @@
       "matches": ["https://mail.google.com/*", "https://inbox.google.com/*"],
       "js": ["inboxsdk.js", "app.js"]
     }
-  ]
+  ],
+  "icons": {"128": "Thumb.png"}
 }
