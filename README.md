@@ -1,7 +1,10 @@
-# Good Sig Offs - Gmail Extension
+# Good Sig Offs
+### [Gmail Extension](https://chrome.google.com/webstore/detail/good-sign-offs-gmail-exte/cjnofdlhmemkhpblcjfebeifobamahle?ref=producthunt)
 
 100+ ways to tell someone goodbye.
+
 Randomly insert a sign-off with the click of a button from the Gmail composer.
+
 Sign-Offs derived from [Meg Miller - Good Sign-Offs](https://www.are.na/meg-miller/good-sign-offs)
 
 Check it out on [Product Hunt](https://www.producthunt.com/posts/good-sign-offs-gmail-extension)
